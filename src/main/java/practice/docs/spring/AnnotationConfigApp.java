@@ -1,6 +1,5 @@
 package practice.docs.spring;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import practice.docs.spring.bean.TestBeanFactory;
@@ -8,8 +7,7 @@ import practice.docs.spring.bean.user.UserService;
 
 import java.util.Arrays;
 
-@SpringBootApplication
-public class Application {
+public class AnnotationConfigApp {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(TestBeanFactory.class);
@@ -17,8 +15,7 @@ public class Application {
         userService.printHello();
 
         String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
-        Arrays.stream(beanDefinitionNames)
-                .forEach(System.out::println);
+        System.out.println(Arrays.toString(beanDefinitionNames));
         /*
         내가 등록한 Bean 이외에도 다음 Bean들이 정의되어 있다.
         org.springframework.context.annotation.internalConfigurationAnnotationProcessor
