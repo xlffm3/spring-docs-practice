@@ -25,17 +25,4 @@ public class TestBeanFactory {
     public DataSource dataSource() {
         return new SingleConnectionDataSource();
     }
-
-    /*
-    순환 의존성 문제가 발생한다.
-     */
-//    @Bean
-//    public Bar bar() {
-//        return new Bar(poo());
-//    }
-//
-//    @Bean
-//    public Poo poo() {
-//        return new Poo(bar());
-//    }
 }
