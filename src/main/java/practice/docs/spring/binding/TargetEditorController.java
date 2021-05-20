@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import practice.docs.spring.binding.editor.TargetEditor;
 
 @RestController
-public class TargetController {
+public class TargetEditorController {
 
     @InitBinder
     public void init(WebDataBinder webDataBinder) {
@@ -17,7 +18,6 @@ public class TargetController {
 
     @GetMapping("/target/{target}")
     public ResponseEntity<Target> handleTarget(@PathVariable Target target) {
-        System.out.println("target log~~" + target.getMoney());
         return ResponseEntity.ok(target);
     }
 }
