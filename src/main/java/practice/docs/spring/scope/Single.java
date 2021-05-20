@@ -1,4 +1,4 @@
-package practice.docs.spring.bean.scope;
+package practice.docs.spring.scope;
 
 import org.springframework.stereotype.Component;
 

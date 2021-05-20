@@ -1,28 +1,26 @@
-package practice.docs.spring;
+package practice.docs.spring.environment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.env.Environment;
-import org.springframework.test.context.ActiveProfiles;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@ActiveProfiles("main")
-class ProfileTest {
+class PropertyTest {
 
     @Autowired
     private ApplicationContext applicationContext;
 
     @Test
-    void profile() {
+    void property() {
         Environment environment = applicationContext.getEnvironment();
-        String[] activeProfiles = environment.getActiveProfiles();
-        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        Property property = applicationContext.getBean("property", Property.class);
+        String name = environment.getProperty("test.property");
 
-        assertThat(activeProfiles).contains("main");
-        assertThat(beanDefinitionNames).contains("bean1", "bean2").doesNotContain("bean3");
+        assertThat(name).isEqualTo("kevin");
+        assertThat(property.getName()).isEqualTo("kevin");
     }
 }

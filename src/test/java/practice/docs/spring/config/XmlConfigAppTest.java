@@ -1,4 +1,4 @@
-package practice.docs.spring;
+package practice.docs.spring.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;

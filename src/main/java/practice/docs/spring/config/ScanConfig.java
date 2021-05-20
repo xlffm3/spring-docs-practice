@@ -1,4 +1,4 @@
-package practice.docs.spring.bean;
+package practice.docs.spring.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

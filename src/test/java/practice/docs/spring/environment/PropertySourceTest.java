@@ -1,11 +1,9 @@
-package practice.docs.spring;
+package practice.docs.spring.environment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.Environment;
-import practice.docs.spring.environment.TestProperty;
-import practice.docs.spring.environment.TestPropertyConfig;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

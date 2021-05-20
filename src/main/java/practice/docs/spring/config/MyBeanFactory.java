@@ -1,4 +1,4 @@
-package practice.docs.spring.bean;
+package practice.docs.spring.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,7 @@ import practice.docs.spring.bean.user.UserService;
 import javax.sql.DataSource;
 
 @Configuration
-public class TestBeanFactory {
+public class MyBeanFactory {
 
     @Bean
     public UserService userService() {

@@ -1,9 +1,9 @@
-package practice.docs.spring;
+package practice.docs.spring.scope;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import practice.docs.spring.bean.scope.Single;
+import org.springframework.context.ApplicationContext;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -11,10 +11,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 class BeanScopeTest {
 
     @Autowired
-    private Single single;
+    private ApplicationContext applicationContext;
 
     @Test
     void scopeTest() {
+        Single single = applicationContext.getBean("single", Single.class);
+
         assertThat(single.getProto()).isEqualTo(single.getProto());
         assertThat(single.getProxyProto()).isSameAs(single.getProxyProto());
     }
