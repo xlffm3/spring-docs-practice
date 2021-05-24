@@ -17,6 +17,15 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
     compile('org.springframework.boot:spring-boot-configuration-processor')
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    implementation group: 'de.codecentric', name: 'spring-boot-admin-starter-server', version: '2.4.1'
+
+    implementation group: 'io.netty', name: 'netty-resolver-dns-native-macos', version: '4.1.65.Final'
+
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.12.3'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.12.3'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.12.3'
 }
 
 test {

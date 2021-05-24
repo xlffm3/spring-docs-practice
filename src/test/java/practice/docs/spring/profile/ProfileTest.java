@@ -15,11 +15,9 @@ class ProfileTest {
 
     @Test
     void profileTest() {
-        TestBean testBean = applicationContext.getBean("testBean", TestBean.class);
-        LocalTestBean localTestBean = applicationContext.getBean("localTestBean", LocalTestBean.class);
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
 
-        assertThat(testBean).isNotNull();
-        assertThat(localTestBean.getName()).isEqualTo("kevin");
-        assertThat(applicationContext.containsBean("prodBean")).isFalse();
+        assertThat(beanDefinitionNames).contains("testBean").contains("localTestBean")
+                .doesNotContain("prodBean");
     }
 }
